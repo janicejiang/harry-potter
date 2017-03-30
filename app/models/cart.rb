@@ -7,4 +7,8 @@ class Cart < ApplicationRecord
     ci.book = book
     ci.save
   end
+
+  def total_price
+
+  end
 end
