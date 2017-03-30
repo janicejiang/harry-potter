@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'books#index'
 
+  resources :carts
+
   resources :books do
     member do
       post :add_to_cart

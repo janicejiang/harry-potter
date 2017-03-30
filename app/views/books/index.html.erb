@@ -10,7 +10,7 @@
       <% @books.each do |book| %>
         <tr>
           <td><%= book.series %></td>
-          <td>$ <%= book.price %></td>
+          <td>$<%= book.price %></td>
           <td>
             <%= link_to("加入购物车", add_to_cart_book_path(book),
                         method: :post, class: "btn btn-default") %>

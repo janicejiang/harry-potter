@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Series</th>
+          <th>Price</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% current_cart.cart_items.each do |cart_item| %>
+          <tr>
+            <td><%= cart_item.book.series %></td>
+            <td><%= cart_item.book.price %></td>
+            <td><%= cart_item.quantity %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+
+    <div class="total clearfix">
+      <span class="pull-right">
+         <span> 总计 $xxx  </span>
+      </span>
+    </div>
+
+    <hr>
+
+    <div class="checkout clearfix">
+      <%= link_to("确认结账", "#", class: "btn btn-default pull-right") %>
+    </div>
+  </div>
+</div>
