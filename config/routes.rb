@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'books#index'
 
   resources :carts
+  resources :cart_items
 
   resources :books do
     member do
