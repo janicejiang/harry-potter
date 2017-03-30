@@ -1,0 +1,19 @@
+<div class="col-md-12">
+  <h1>Harry Potter</h1>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <td>Series</td>
+        <td>Price</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @books.each do |book| %>
+        <tr>
+          <td><%= book.series %></td>
+          <td>$ <%= book.price %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
