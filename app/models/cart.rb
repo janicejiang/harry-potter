@@ -31,7 +31,6 @@ class Cart < ApplicationRecord
     sum
   end
 
-  # 测试码
   # def total_price(amount, kind)
   #   sum = 0
   #   if kind == 1
@@ -45,6 +44,7 @@ class Cart < ApplicationRecord
   #   elsif kind == 5
   #     sum = amount * 100 - kind * 100 * 0.25
   #   end
+  #   puts "#{amount}本书, #{kind}种, 总计$#{sum}."
   #   sum
   # end
 end
