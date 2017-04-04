@@ -6,6 +6,7 @@
           <th>Series</th>
           <th>Price</th>
           <th>Quantity</th>
+          <th>操作选项</th>
         </tr>
       </thead>
 
@@ -16,9 +17,13 @@
             <td><%= cart_item.book.price %></td>
             <td>
               <%= form_for cart_item, url: cart_item_path(cart_item.book_id) do |f| %>
-                <%= f.select :quantity, [1,2,3,4,5] %>
+                <%= f.select :quantity, [0,1,2,3,4,5,6] %>
                 <%= f.submit "更新", data: { disable_with: "Submiting..." }, class: "btn btn-xs btn-default" %>
               <% end %>
+            </td>
+            <td>
+              <%= link_to("delete", cart_item_path(cart_item.book_id), method: :delete,
+                          class: "btn btn-xs btn-default") %>
             </td>
           </tr>
         <% end %>
@@ -29,7 +34,7 @@
 
     <div class="total clearfix">
       <span class="pull-right">
-         <span> 总计 $xxx  </span>
+         <span> 总计 $<%= render_cart_total_price(current_cart) %>  </span>
       </span>
     </div>
 
